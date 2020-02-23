@@ -131,6 +131,10 @@ class VL53L0X
     inline uint16_t getTimeout(void) { return io_timeout; }
     bool timeoutOccurred(void);
 
+    /** Added by Mogball **/
+    void clearInterrupt();
+    /** End **/
+
   private:
     // TCC: Target CentreCheck
     // MSRC: Minimum Signal Rate Check

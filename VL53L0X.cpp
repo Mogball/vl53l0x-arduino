@@ -1035,3 +1035,9 @@ bool VL53L0X::performSingleRefCalibration(uint8_t vhv_init_byte)
 
   return true;
 }
+
+/** Added by Mogball **/
+void VL53L0X::clearInterrupt() {
+  writeReg(SYSTEM_INTERRUPT_CLEAR, 0x01);
+}
+/** End **/
