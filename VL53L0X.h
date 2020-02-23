@@ -132,7 +132,8 @@ class VL53L0X
     bool timeoutOccurred(void);
 
     /** Added by Mogball **/
-    void clearInterrupt();
+    void clearInterrupt(void);
+    uint16_t readRangeInterrupt(void);
     /** End **/
 
   private:

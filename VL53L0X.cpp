@@ -1037,7 +1037,13 @@ bool VL53L0X::performSingleRefCalibration(uint8_t vhv_init_byte)
 }
 
 /** Added by Mogball **/
-void VL53L0X::clearInterrupt() {
+void VL53L0X::clearInterrupt(void) {
   writeReg(SYSTEM_INTERRUPT_CLEAR, 0x01);
+}
+
+uint16_t VL53L0X::readRangeInterrupt(void) {
+  uint16_t range = readReg16Bit(RESULT_RANGE_STATUS + 10);
+  clearInterrupt();
+  return range;
 }
 /** End **/
